@@ -59,16 +59,18 @@
 
 #import <Foundation/Foundation.h>
 
+// Disable legacy macros
+#ifndef DD_LEGACY_MACROS
+    #define DD_LEGACY_MACROS 0
+#endif
+
+#if __has_include(<JCToolKit/JCToolKit.h>)
+
 //! Project version number for CocoaLumberjack.
 FOUNDATION_EXPORT double CocoaLumberjackVersionNumber;
 
 //! Project version string for CocoaLumberjack.
 FOUNDATION_EXPORT const unsigned char CocoaLumberjackVersionString[];
-
-// Disable legacy macros
-#ifndef DD_LEGACY_MACROS
-    #define DD_LEGACY_MACROS 0
-#endif
 
 // Core
 #import <CocoaLumberjack/DDLog.h>
@@ -102,3 +104,40 @@ FOUNDATION_EXPORT const unsigned char CocoaLumberjackVersionString[];
 #import <CocoaLumberjack/DDAbstractDatabaseLogger.h>
 #import <CocoaLumberjack/DDLog+LOGV.h>
 #import <CocoaLumberjack/DDLegacyMacros.h>
+
+#else
+
+// Core
+#import "DDLog.h"
+
+// Main macros
+#import "DDLogMacros.h"
+#import "DDAssertMacros.h"
+
+// Capture ASL
+#import "DDASLLogCapture.h"
+
+// Loggers
+#import "DDLoggerNames.h"
+
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
+#import "DDFileLogger.h"
+#import "DDOSLogger.h"
+
+// Extensions
+#import "DDContextFilterLogFormatter.h"
+#import "DDContextFilterLogFormatter+Deprecated.h"
+#import "DDDispatchQueueLogFormatter.h"
+#import "DDMultiFormatter.h"
+#import "DDFileLogger+Buffering.h"
+
+// CLI
+#import "CLIColor.h"
+
+// etc
+#import "DDAbstractDatabaseLogger.h"
+#import "DDLog+LOGV.h"
+#import "DDLegacyMacros.h"
+
+

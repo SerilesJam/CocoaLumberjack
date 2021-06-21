@@ -16,5 +16,5 @@
 // This header is mostly blank because all of the declarations are in Swift.
 // Still, this header may still be needed so Swift doesn't complain when importing CocoaLumberjackSwift.
 
-#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "CocoaLumberjack.h"
 #import <CocoaLumberjackSwift/SwiftLogLevel.h>

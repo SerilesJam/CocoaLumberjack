@@ -59,53 +59,16 @@
 
 #import <Foundation/Foundation.h>
 
-// Disable legacy macros
-#ifndef DD_LEGACY_MACROS
-    #define DD_LEGACY_MACROS 0
-#endif
-
-#if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
-
 //! Project version number for CocoaLumberjack.
 FOUNDATION_EXPORT double CocoaLumberjackVersionNumber;
 
 //! Project version string for CocoaLumberjack.
 FOUNDATION_EXPORT const unsigned char CocoaLumberjackVersionString[];
 
-// Core
-#import <CocoaLumberjack/DDLog.h>
-
-// Main macros
-#import <CocoaLumberjack/DDLogMacros.h>
-#import <CocoaLumberjack/DDAssertMacros.h>
-
-// Capture ASL
-#import <CocoaLumberjack/DDASLLogCapture.h>
-
-// Loggers
-#import <CocoaLumberjack/DDLoggerNames.h>
-
-#import <CocoaLumberjack/DDTTYLogger.h>
-#import <CocoaLumberjack/DDASLLogger.h>
-#import <CocoaLumberjack/DDFileLogger.h>
-#import <CocoaLumberjack/DDOSLogger.h>
-
-// Extensions
-#import <CocoaLumberjack/DDContextFilterLogFormatter.h>
-#import <CocoaLumberjack/DDContextFilterLogFormatter+Deprecated.h>
-#import <CocoaLumberjack/DDDispatchQueueLogFormatter.h>
-#import <CocoaLumberjack/DDMultiFormatter.h>
-#import <CocoaLumberjack/DDFileLogger+Buffering.h>
-
-// CLI
-#import <CocoaLumberjack/CLIColor.h>
-
-// etc
-#import <CocoaLumberjack/DDAbstractDatabaseLogger.h>
-#import <CocoaLumberjack/DDLog+LOGV.h>
-#import <CocoaLumberjack/DDLegacyMacros.h>
-
-#else
+// Disable legacy macros
+#ifndef DD_LEGACY_MACROS
+    #define DD_LEGACY_MACROS 0
+#endif
 
 // Core
 #import "DDLog.h"
@@ -139,5 +102,3 @@ FOUNDATION_EXPORT const unsigned char CocoaLumberjackVersionString[];
 #import "DDAbstractDatabaseLogger.h"
 #import "DDLog+LOGV.h"
 #import "DDLegacyMacros.h"
-
-#endif
